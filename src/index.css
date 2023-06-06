@@ -27,3 +27,10 @@ ul {
   background: #1f9751;
   color: #fff;
 }
+
+p.error {
+  color: red;
+  font-size: 0.75em;
+  margin-top: -1.5em;
+  margin-bottom: 1em;
+}

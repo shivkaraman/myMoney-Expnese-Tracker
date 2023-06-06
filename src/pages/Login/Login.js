@@ -1,4 +1,5 @@
 //Styles
+import useSignup from '../../hooks/useLogin'
 import styles from './Login.module.css'
 
 import { useState } from 'react'
@@ -6,10 +7,11 @@ import { useState } from 'react'
 export default function Login(){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const {error, isPending, login} = useLogin()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(email, password)
+        login(email, password)
     }
     return(
         <form className={styles['login-form']} onSubmit={handleSubmit}>
@@ -33,7 +35,9 @@ export default function Login(){
                     required>
                 </input>
             </label>
-            <button className="btn" type='submit'>login</button>
+            {error && <p className='error'> { error } </p>}
+            {isPending && <button className="btn" disabled>loading</button>}
+            {!isPending && <button className="btn" type='submit'>login</button>}
         </form>
     )
 }
