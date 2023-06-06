@@ -30,5 +30,9 @@ export default function useSignup(){
         }
     }
 
+    useEffect(() => {
+        return () => setIsCancelled(true)
+    }, [])
+
     return { isPending, error, logout}
 }

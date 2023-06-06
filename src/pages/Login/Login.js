@@ -7,13 +7,15 @@ import { useState } from 'react'
 export default function Login(){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const {error, isPending, login} = useLogin()
+    const {error, isPending, login } = useLogin()
 
     const handleSubmit = async(e) => {
         e.preventDefault()
         await login(email, password)
-        setEmail('')
-        setPassword('')
+        if(!error){
+            setEmail('')
+            setPassword('')
+        }
     }
     return(
         <form className={styles['login-form']} onSubmit={handleSubmit}>

@@ -13,9 +13,11 @@ export default function Signup(){
     const handleSubmit = async(e) => {
         e.preventDefault()
         await signup(email, password, displayName)
-        setEmail('')
-        setPassword('')
-        setDisplayName('')
+        if(!error){
+            setEmail('')
+            setPassword('')
+            setDisplayName('')
+        }
     }
     return(
         <form className={styles['signup-form']} onSubmit={handleSubmit}>
@@ -50,7 +52,7 @@ export default function Signup(){
             </label>
             {error && <p className='error'> { error } </p>}
             {isPending && <button className="btn" disabled>loading</button>}
-            {!isPending && <button className="btn" type='submit'>login</button>}
+            {!isPending && <button className="btn" type='submit'>signup</button>}
         </form>
     )
 }
