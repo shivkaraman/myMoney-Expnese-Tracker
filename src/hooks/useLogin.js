@@ -19,7 +19,7 @@ export default function useSignup(){
                 throw new Error ('Login failed')
             }
 
-			console.lof(res.user)
+			console.log(res.user)
             dispatch( {type: 'LOGIN', payload: res.user} )
 
 			if(!isCancelled){
@@ -35,9 +35,5 @@ export default function useSignup(){
         }
     }
 
-    useEffect(() => {
-      return setIsCancelled(true)
-    }, [])
-
-    return { isPending, error, login, isCancelled }
+    return { isPending, error, login }
 }

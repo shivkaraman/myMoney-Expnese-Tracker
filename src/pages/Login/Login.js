@@ -1,5 +1,5 @@
 //Styles
-import useSignup from '../../hooks/useLogin'
+import useLogin from '../../hooks/useLogin'
 import styles from './Login.module.css'
 
 import { useState } from 'react'
@@ -9,9 +9,11 @@ export default function Login(){
     const [password, setPassword] = useState('')
     const {error, isPending, login} = useLogin()
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
-        login(email, password)
+        await login(email, password)
+        setEmail('')
+        setPassword('')
     }
     return(
         <form className={styles['login-form']} onSubmit={handleSubmit}>

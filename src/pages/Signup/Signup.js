@@ -10,9 +10,12 @@ export default function Signup(){
     const [displayName, setDisplayName] = useState('')
     const { error, isPending , signup} = useSignup()
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
-        signup(email, password, displayName)
+        await signup(email, password, displayName)
+        setEmail('')
+        setPassword('')
+        setDisplayName('')
     }
     return(
         <form className={styles['signup-form']} onSubmit={handleSubmit}>

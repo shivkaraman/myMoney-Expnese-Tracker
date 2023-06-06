@@ -42,5 +42,5 @@ export default function useSignup(){
         return setIsCancelled(true)
     }, [])
 
-    return { isPending, error, signup, isCancelled }
+    return { isPending, error, signup }
 }
