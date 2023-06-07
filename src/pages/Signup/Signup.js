@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import useSignup from '../../hooks/useSignup'
 
 //Styles
@@ -10,15 +10,18 @@ export default function Signup(){
     const [displayName, setDisplayName] = useState('')
     const { error, isPending , signup} = useSignup()
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
-        await signup(email, password, displayName)
+        signup(email, password, displayName)
+    }
+
+    useEffect(() => {
         if(!error){
             setEmail('')
             setPassword('')
             setDisplayName('')
         }
-    }
+    }, [error])
     return(
         <form className={styles['signup-form']} onSubmit={handleSubmit}>
             <h2>Signup</h2>
