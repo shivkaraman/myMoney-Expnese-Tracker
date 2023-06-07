@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/shivkaraman/myMoney-Expnese-Tracker/static/css/main.31d7c232.css",
-    "main.js": "/shivkaraman/myMoney-Expnese-Tracker/static/js/main.a820b3a1.js",
-    "index.html": "/shivkaraman/myMoney-Expnese-Tracker/index.html",
-    "main.31d7c232.css.map": "/shivkaraman/myMoney-Expnese-Tracker/static/css/main.31d7c232.css.map",
-    "main.a820b3a1.js.map": "/shivkaraman/myMoney-Expnese-Tracker/static/js/main.a820b3a1.js.map"
+    "main.css": "/shivkaraman/myMoney-Expnese-Tracker/login/static/css/main.31d7c232.css",
+    "main.js": "/shivkaraman/myMoney-Expnese-Tracker/login/static/js/main.29ac983d.js",
+    "index.html": "/shivkaraman/myMoney-Expnese-Tracker/login/index.html",
+    "main.31d7c232.css.map": "/shivkaraman/myMoney-Expnese-Tracker/login/static/css/main.31d7c232.css.map",
+    "main.29ac983d.js.map": "/shivkaraman/myMoney-Expnese-Tracker/login/static/js/main.29ac983d.js.map"
   },
   "entrypoints": [
     "static/css/main.31d7c232.css",
-    "static/js/main.a820b3a1.js"
+    "static/js/main.29ac983d.js"
   ]
 }
